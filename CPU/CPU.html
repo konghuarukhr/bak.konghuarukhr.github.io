@@ -1,4 +1,8 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
     <body>
         <h1 align="center">CPU基础知识</h1>
         <img src="lscpu.png" alt="lscpu"/>
@@ -11,23 +15,26 @@
         <h2>OS</h2>
         <p>OS看到的Processors=Sockets*Cores*Threads。sysconf(_SC_NPROCESSORS_ONLN)获取当前可用的Processors数量。</p>
         <h2>Profiler</h2>
-        <p><a href="http://poormansprofiler.org/"><code>
-            #!/bin/bash
-            nsamples=1
-            sleeptime=0
-            pid=$(pidof mysqld)
+        <p>
+        From <a href="http://poormansprofiler.org/">poormansprofiler.org</a>:
+        <pre><code>
+#!/bin/bash
+nsamples=1
+sleeptime=0
+pid=$(pidof mysqld)
 
-            for x in $(seq 1 $nsamples)
-              do
-                gdb -ex "set pagination 0" -ex "thread apply all bt" -batch -p $pid
-                sleep $sleeptime
-              done | \
-            awk '
-              BEGIN { s = ""; } 
-              /^Thread/ { print s; s = ""; } 
-              /^\#/ { if (s != "" ) { s = s "," $4} else { s = $4 } } 
-              END { print s }' | \
-            sort | uniq -c | sort -r -n -k 1,1
-        </code></a></p>
+for x in $(seq 1 $nsamples)
+  do
+    gdb -ex "set pagination 0" -ex "thread apply all bt" -batch -p $pid
+    sleep $sleeptime
+  done | \
+awk '
+  BEGIN { s = ""; } 
+  /^Thread/ { print s; s = ""; } 
+  /^\#/ { if (s != "" ) { s = s "," $4} else { s = $4 } } 
+  END { print s }' | \
+sort | uniq -c | sort -r -n -k 1,1
+            </pre></code>
+        </p>
     </body>
 </html>
