@@ -1,0 +1,1 @@
+Data abstraction divides a data type into two pieces: an interface and an implementation.
