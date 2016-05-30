@@ -20,3 +20,7 @@
  (if (equal? '(one) n)
   '(diff (one) (one))
   (list 'diff (predecessor (cadr n)) (caddr n))))
+
+(define (diff-tree-plus n m)
+ (let ((m1 (cadr m)) (m2 (caddr m)))
+  (list 'diff n (list 'diff m2 m1))))
