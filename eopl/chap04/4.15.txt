@@ -1,0 +1,1 @@
+Denoted values are references to locations that contain expressed values.

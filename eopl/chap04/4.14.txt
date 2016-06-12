@@ -1,0 +1,3 @@
+(value-of (let-exp var exp1 body) rho omiga)
+=
+((value-of body [var=l]rho [l=exp1]omiga)

@@ -1,0 +1,6 @@
+(value-of exp1 rho sigma0) = (l, sigma1)
+(value-of exp2 rho sigma1) = (val, sigma2)
+------------------------------------------
+(value-of (setref-exp exp1 exp2) rho sigma0)
+=
+(sigma1(l), [l=val]sigma2)

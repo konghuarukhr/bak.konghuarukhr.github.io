@@ -1,0 +1,20 @@
+4 State
+
+4.1 Computational Effects
+compuation may have VALUES or EFFECTS
+An effect is global: it is seen by the entire computation.
+An effect affects the entire compution (pun intended).
+Binding is local, but variable assignment is potentially global.
+model memory as a finite map: locations => values (storable values, store,
+are typically, but not always, the same as the expressed values of the language)
+A data structure that represents a location is called a REFERENCE (L-value).
+Expressed values (R-values).
+EXPLICIT REFERENCES and IMPLICIT REFERENCES
+
+4.2 EXPLICIT-REFS: A Language with Explicit References
+
+4.5 Parameter-Passing Variations
+call-by-value (or pass-by-value): we are passing a copy of the variable to a function.
+call-by-reference (or pass-by-reference): we are passing an alias of the variable to a function.
+call-by-name:
+call-by-need:

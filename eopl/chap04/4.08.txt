@@ -1,0 +1,3 @@
+newref: length, append
+deref: list-ref
+setref!: recursive call setref-inner

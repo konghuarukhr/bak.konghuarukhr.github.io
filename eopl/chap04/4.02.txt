@@ -1,0 +1,6 @@
+(value-of exp1 rho sigma0) = (val1, sigma1)
+-------------------------------------------
+(value-of (zero?-exp exp1) rho sigma0)
+=
+((boolean-val #t), sigma1) if (expval->int val1) = 1
+((boolean-val #f), sigma1) if (expval->int val1) = 0
