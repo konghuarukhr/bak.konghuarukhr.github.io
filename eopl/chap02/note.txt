@@ -1,6 +1,0 @@
-2.1 Specifying Data via Interfaces
-Data abstraction divides a data type into two pieces: an interface and an implementation.
-
-2.2 Representation Strategies for Data Types
-    Data Structure Representation
-    Procedural Representation
